@@ -15,13 +15,13 @@
 
     <div id="title" class="scene">
       <img src="./shapes/title.svg" alt="Game title" class="full" />
-      <img src="./shapes/titleButton.svg" alt="Start" id="title-button" class="button" onclick="changeScene('title', 'choice')" />
+      <img src="./shapes/titleButton.svg" alt="Start" id="title-button" class="button" onclick="stopAudio('title-audio');changeScene('title', 'choice')" />
     </div>
 
     <div id="choice" class="scene">
       <img src="./shapes/choice.svg" alt="Dew it" class="full" />
-      <img src="./shapes/no.svg" alt="No" id="no" class="button" onclick="changeScene('choice', 'mmm-scene');setTimeout(()=>changeScene('mmm-scene', 'loss'), 833.33)" />
-      <img src="./shapes/yes.svg" alt="Yes" id="yes" class="button" onclick="changeScene('choice', 'shirt-move');setTimeout(()=>changeScene('shirt-move', 'tickle'), 1417);setTimeout(()=>changeScene('tickle', 'win'), 3667)" />
+      <img src="./shapes/no.svg" alt="No" id="no" class="button" onclick="stopAudio('choice-audio');changeScene('choice', 'mmm-scene');setTimeout(()=>changeScene('mmm-scene', 'loss'), 833.33)" />
+      <img src="./shapes/yes.svg" alt="Yes" id="yes" class="button" onclick="stopAudio('choice-audio');changeScene('choice', 'shirt-move');setTimeout(()=>changeScene('shirt-move', 'tickle'), 1417);setTimeout(()=>changeScene('tickle', 'win'), 3667)" />
     </div>
 
     <div id="mmm-scene" class="scene">
@@ -47,5 +47,24 @@
       <img src="./shapes/win.svg" alt="You win" id="win-img" />
       <img src="./shapes/again.svg" alt="Play again" class="button again" onclick="changeScene('win', 'title')" />
     </div>
+
+    <audio id="title-audio">
+      <source src="./sounds/title.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="choice-audio">
+      <source src="./sounds/choice.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="mmm-scene-audio">
+      <source src="./sounds/mmm.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="loss-audio">
+      <source src="./sounds/loss.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="tickle-audio">
+      <source src="./sounds/hihi.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="win-audio">
+      <source src="./sounds/win.mp3" type="audio/mpeg">
+    </audio>
   </body>
 </html>
