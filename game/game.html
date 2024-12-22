@@ -4,7 +4,48 @@
     <meta charset="utf-8">
     <title>Sakarin villapaitapeli</title>
     <link rel="stylesheet" type="text/css" href="./game.css" />
+    <script type="text/javascript" src="./game.js"></script>
   </head>
   <body>
+    <div id="start" class="scene active">
+      <div class="circle" onclick="changeScene('start', 'title')">
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    <div id="title" class="scene">
+      <img src="./shapes/title.svg" alt="Game title" class="full" />
+      <img src="./shapes/titleButton.svg" alt="Start" id="title-button" class="button" onclick="changeScene('title', 'choice')" />
+    </div>
+
+    <div id="choice" class="scene">
+      <img src="./shapes/choice.svg" alt="Dew it" class="full" />
+      <img src="./shapes/no.svg" alt="No" id="no" class="button" onclick="changeScene('choice', 'mmm-scene');setTimeout(()=>changeScene('mmm-scene', 'loss'), 833.33)" />
+      <img src="./shapes/yes.svg" alt="Yes" id="yes" class="button" onclick="changeScene('choice', 'shirt-move');setTimeout(()=>changeScene('shirt-move', 'tickle'), 1417);setTimeout(()=>changeScene('tickle', 'win'), 3667)" />
+    </div>
+
+    <div id="mmm-scene" class="scene">
+      <img src="./shapes/mmm.svg" alt="MMM" id="mmm" />
+    </div>
+
+    <div id="loss" class="scene">
+      <img src="./shapes/loss.svg" alt="You lose" id="loss-img" />
+      <img src="./shapes/again.svg" alt="Play again" class="button again" onclick="changeScene('loss', 'title')" />
+    </div>
+
+    <div id="shirt-move" class="scene">
+      <img src="./shapes/wear.svg" alt="Sakari ready to wear sweater" id="wear" />
+      <img src="./shapes/sweater.svg" alt="Sweater moving" id="sweater" />
+    </div>
+
+    <div id="tickle" class="scene">
+      <img src="./shapes/tickle.svg" alt="Sakari tickling" id="tickle-img" />
+      <img src="./shapes/hihihi.svg" alt="HIHIHI" id="hihi" />
+    </div>
+
+    <div id="win" class="scene">
+      <img src="./shapes/win.svg" alt="You win" id="win-img" />
+      <img src="./shapes/again.svg" alt="Play again" class="button again" onclick="changeScene('win', 'title')" />
+    </div>
   </body>
 </html>
